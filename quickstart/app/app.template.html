@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="page-header">
+        <h1>Angular quickstart</h1>
+    </div>
+    <ul class = "nav nav-pills">
+        <li [class.active]="currentView == 'courses'"><a (click)= "courClick()">Courses</a></li>
+        <li [class.active]="currentView == 'authors'"><a (click)= "authClick()">Authors</a></li>
+        <li [class.active]="currentView == 'contact'"><a (click)= "contactClick()">Contact</a></li>
+        <li [class.active]="currentView == 'signup'"><a (click)= "signupClick()">Sign Up</a></li>
+    </ul>
+    <div [ngSwitch]="currentView">
+        <div *ngSwitchCase="'courses'">
+            <courses>   
+                <div class="header">{{coursestitle}}</div>
+            </courses>
+        </div>
+
+        <div *ngSwitchCase="'authors'">
+            <authors>
+            </authors>
+        </div>
+
+            <!--
+        <zippy title='This is the title'>
+            This is the content
+        </zippy>
+        -->
+        <div *ngSwitchCase="'contact'">
+            <contact-form></contact-form>
+        </div>
+
+        <div *ngSwitchCase="'signup'">
+            <signup-form></signup-form>
+        </div>
+    </div>
+    
+</div>
+

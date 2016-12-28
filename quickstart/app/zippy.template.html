@@ -1,0 +1,13 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        <span>{{title}}</span>
+        <span class='glyphicon' (click)='onClick()'
+            [ngClass]="{
+                'glyphicon-chevron-up' : collapsed,
+                'glyphicon-chevron-down' : !collapsed
+            }" ></span>
+    </div>
+    <div class='panel-body' *ngIf = '!collapsed'>
+        <ng-content></ng-content>
+    </div>
+<div>

@@ -1,0 +1,14 @@
+<div>
+    <h1>{{title}}</h1>
+    <div>
+    <ul>
+        <li *ngFor="let author of authors">
+            <div>{{author.name}}
+                <star [isFavorite]="author.starred" 
+                    (changeFavorite)="onChangeFavorite($event)" >
+                </star>
+            </div>
+        </li>
+    </ul>
+    </div>
+</div>

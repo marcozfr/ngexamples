@@ -1,0 +1,24 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <ng-content select=".header"></ng-content>
+        </div>
+        <div class="panel-body">
+            <div>
+                <ul>
+                    <li *ngFor="let course of courses">
+                        {{course.name}} 
+                        <!--<like [likes]="course.likes" ></like> -->
+                        <vote [votes]="course.votes" [myVote]="course.myVote" (vote) = "onVote($event)" ></vote>
+                    </li>
+                </ul>
+                <div [hidden]="!loggedIn">
+                    <label for="contactText">Contact:</label>
+                    <input id="contactText" 
+                        type="text" autoGrow />
+                    <button class="btn btn-primary" >Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

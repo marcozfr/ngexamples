@@ -1,0 +1,12 @@
+<div class="media" *ngFor='let tweet of tweets, let i = index'>
+    <div class="media-left">
+        <a href="#">
+        <img class="media-object" [src]="tweet.img" alt="img">
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">{{tweet.name}} <star></star></h4>
+        <div>{{tweet.tweet | lowercase | summary:10 }}</div>
+        <span>{{tweet.date | date:'dd MMM yyyy'}}</span>
+    </div>
+</div>

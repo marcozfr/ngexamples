@@ -1,0 +1,36 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" >
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input ngModel name="firstName" #firstName="ngModel"
+            id="firstName" type="text" class="form-control"
+            required minlength="5">
+        <div *ngIf="firstName.touched && firstName.errors">
+            <div class="alert alert-danger" 
+                *ngIf="firstName.errors.required">First name is required.</div>
+            <div class="alert alert-danger" 
+                *ngIf="firstName.errors.minlength">First name should be minimun 
+                {{firstName.errors.minlength.requiredLength}} length.</div>
+        </div>    
+    </div>
+    <div class="form-group">
+        <label for="comment">Comments</label>
+        <textarea ngModel name="comment" #comment="ngModel" 
+            id="comment" cols="30" rows="10" class="form-control" 
+            required>
+        </textarea>
+        <div class="alert alert-danger" 
+            *ngIf="comment.touched && !comment.valid">Comment is required.</div>
+    </div>
+    <div class="from-group">
+        <label for="courseSelection">Course</label>
+        <select ngModel #courseSelection="ngModel" name="courseSelection" 
+            id="courseSelection" class="form-control" required>
+            <option *ngFor="let course of courses" value="course.name">{{course.name}}<option>
+        </select>
+    </div>
+    <div *ngIf="courseSelection.touched && courseSelection.errors">
+        <div class="alert alert-danger" 
+            *ngIf="courseSelection.errors.required">Course is required.</div>
+    </div> 
+    <button class='btn btn-primary' type='submit' [disabled]="!form.valid">Submit</button>
+</form>
