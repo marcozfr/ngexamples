@@ -15,15 +15,16 @@ import { TweetsComponent} from './tweets.component';
 import { SummaryPipe} from './summary.pipe';
 import { ZippyComponent} from './zippy.component';
 import { ContactFormComponent} from './contact-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpFormComponent } from './signup-form.component'
+import { ChangePasswordFormComponent } from './change-password.component'
 
 @NgModule({
-  imports:      [ BrowserModule,FormsModule ],
+  imports:      [ BrowserModule,FormsModule, ReactiveFormsModule],
   declarations: [ AppComponent, CoursesComponent,AuthorsComponent,
     AutoGrowDirective,StarringComponent,LikeComponent,
     VoteComponent,TweetsComponent,SummaryPipe,ZippyComponent,
-    ContactFormComponent,SignUpFormComponent],
+    ContactFormComponent,SignUpFormComponent,ChangePasswordFormComponent],
   bootstrap:    [ AppComponent ],
   providers : [AuthorsService,CourseService,TweetsService]
 })

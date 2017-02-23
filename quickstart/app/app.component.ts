@@ -19,4 +19,7 @@ export class AppComponent  {
   signupClick(){
     this.currentView = 'signup';
   }
+  changePasswordClick(){
+    this.currentView = 'change-password';
+  }
 }

@@ -7,6 +7,7 @@
         <li [class.active]="currentView == 'authors'"><a (click)= "authClick()">Authors</a></li>
         <li [class.active]="currentView == 'contact'"><a (click)= "contactClick()">Contact</a></li>
         <li [class.active]="currentView == 'signup'"><a (click)= "signupClick()">Sign Up</a></li>
+        <li [class.active]="currentView == 'change-password'"><a (click)= "changePasswordClick()">Change Password</a></li>
     </ul>
     <div [ngSwitch]="currentView">
         <div *ngSwitchCase="'courses'">
@@ -31,6 +32,9 @@
 
         <div *ngSwitchCase="'signup'">
             <signup-form></signup-form>
+        </div>
+        <div *ngSwitchCase="'change-password'">
+            <change-password></change-password>
         </div>
     </div>
     
